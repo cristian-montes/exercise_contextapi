@@ -1,5 +1,9 @@
-import React from "react";
-import faker, { fake } from "faker";
+import React, { useState } from "react";
+import faker from "faker";
+import { SingleProduct } from "./SingleProduct";
+import './styles.css';
+
+faker.seed(100);
 
 const productsArray=[...Array(20)].map(()=> ({
     id:faker.datatype.number(),
@@ -9,11 +13,14 @@ const productsArray=[...Array(20)].map(()=> ({
 }));
 
 const Home = () => {
-
-    console.log(productsArray);
+    const [products] = useState(productsArray);
+    const [cart, setCart] = useState([]);
     return(
-        <div>
-            HOME
+        <div className="productContainer">
+            {products.map((product) => (
+                <SingleProduct key={product.id} product={product} cart={cart} setCart={setCart}/>
+                ))
+            }
         </div>
     )
 }
