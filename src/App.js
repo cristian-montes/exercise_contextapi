@@ -8,7 +8,6 @@ import Cart from './components/Cart';
 
 function App() {
 
-  const [cart, setCart] = useState([]);
   return (
     <BrowserRouter>
       <Header/>
@@ -16,11 +15,11 @@ function App() {
       <div className="App">
         
         <Route exact path='/'>
-          <Home cart={cart} setCart={setCart}/>
+          <Home/>
         </Route>
 
         <Route path='/cart'>
-            <Cart cart={cart} setCart={setCart}/>
+            <Cart/>
         </Route>
 
       </div>

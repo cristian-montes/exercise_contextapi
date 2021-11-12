@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { TheCart } from "../constex";
 import { SingleProduct } from "./SingleProduct";
 
-const Cart = ({cart, setCart}) => {
-
+const Cart = () => {
+    const {cart} =  useContext(TheCart)
     const [total, setTotal] = useState();
 
     useEffect(()=>{
@@ -21,8 +22,6 @@ const Cart = ({cart, setCart}) => {
                     <SingleProduct 
                         prod={product} 
                         key={product.id}
-                        cart={cart}
-                        setCart={setCart}
                     />
                 ))}
             </div>
