@@ -1,4 +1,10 @@
-.App {
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +40,8 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
+  } */
+/* } */
+
+
+

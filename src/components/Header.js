@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './styles.css';
 
 
 const Header = () => {
     return(
         <div>
-            <span>Contex API CART</span>
+            <span className='header'>Contex API CART</span>
             <ul className="nav">
 
-                <li className="prod">
+                <li>
                     <Link to ="/">Home</Link>
                 </li>
-                <li className="prod1">
+                <li>
                     <Link to ="/cart">Cart</Link>
                 </li>
 
