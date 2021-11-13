@@ -1,33 +1,29 @@
-import React, { useContext } from "react";
-import { TheCart } from "../constex";
+import { CartState } from "../Context";
 
-export const SingleProduct= ({product}) => {
-    const {cart, setCart} =  useContext(TheCart)
-    return(
-        <div className="products">
-            <img src={product.image} alt={product.name}/>
-            <div className="productDesc">
-                <span style={{fontWeight: 700}}>{product.name}</span>
-                <span>${product.price.substring(0,3)}</span>
-            </div>
+const SingleProduct = ({ prod }) => {
+  const { cart, setCart } = CartState();
 
-            { cart.includes(product) 
-                    ?
-             ( <button className="add"
-                onClick={() =>{
-                    setCart(cart.filter((c)=>  c.id !== product.id))
-                }}
-                >Remove from Cart
-                </button>) 
-                    : 
-             ( <button className="add"
-                    onClick={() =>{
-                        setCart([...cart, product])
-                    }}
-                >Add to Cart
-              </button>
-              )}
-                     
-</div>
-    )
-}
+  return (
+    <div className="products">
+      <img src={prod.image} alt={prod.name} />
+      <div className="productDesc">
+        <span style={{ fontWeight: 700 }}>{prod.name}</span>
+        <span>₹ {prod.price.substring(0, 3)}</span>
+      </div>
+      {cart.includes(prod) ? (
+        <button
+          className="add remove"
+          onClick={() => setCart(cart.filter((c) => c.id !== prod.id))}
+        >
+          Remove from Cart
+        </button>
+      ) : (
+        <button className="add" onClick={() => setCart([...cart, prod])}>
+          Add to Cart
+        </button>
+      )}
+    </div>
+  );
+};
+
+export default SingleProduct;

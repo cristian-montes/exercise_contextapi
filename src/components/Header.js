@@ -1,27 +1,23 @@
-import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { TheCart } from "../constex";
-import './styles.css';
-
+import { CartState } from "../Context";
+import "./styles.css";
 
 const Header = () => {
-    const {cart, setCart} =  useContext(TheCart)
-    return(
-        <div>
-            <span className='header'>Contex API CART</span>
-            <ul className="nav">
+  const { cart } = CartState();
 
-                <li>
-                    <Link to ="/">Home</Link>
-                </li>
-                <li>
-                    <Link to ="/cart">Cart({cart.length})</Link>
-                </li>
-
-            </ul>
-        </div>
-    )
-}
-
+  return (
+    <div>
+      <span className="header">React Context API</span>
+      <ul className="nav">
+        <li className="prod">
+          <Link to="/">Home Page</Link>
+        </li>
+        <li className="prod1">
+          <Link to="/cart">Cart ({cart.length})</Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default Header;

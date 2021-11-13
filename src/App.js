@@ -1,29 +1,21 @@
-import { BrowserRouter,Route } from 'react-router-dom';
-import './App.css';
-import { useState } from 'react';
-import Header from './components/Header';
-import Home from './components/Home';
-import Cart from './components/Cart';
-
+import "./App.css";
+import Header from "./components/Header";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
 
 function App() {
-
   return (
     <BrowserRouter>
-      <Header/>
-    
+      <Header />
       <div className="App">
-        
-        <Route exact path='/'>
-          <Home/>
+        <Route path="/" exact>
+          <Home />
         </Route>
-
-        <Route path='/cart'>
-            <Cart/>
+        <Route path="/cart">
+          <Cart />
         </Route>
-
       </div>
-
     </BrowserRouter>
   );
 }
