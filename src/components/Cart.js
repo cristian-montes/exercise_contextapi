@@ -16,8 +16,8 @@ const Cart = () => {
       <br />
       <span style={{ fontSize: 30 }}>Total: $ {total}</span>
       <div className="productContainer">
-        {cart.map((prod) => (
-          <SingleProduct prod={prod} key={prod.id} />
+        {cart.map((product) => (
+          <SingleProduct product={product} key={product.id} />
         ))}
       </div>
     </div>

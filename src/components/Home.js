@@ -8,8 +8,8 @@ const Home = () => {
     <div style={{ textAlign: "center" }}>
       <span style={{ fontSize: 30 }}>Products Page</span>
       <div className="productContainer">
-        {products.map((prod) => (
-          <SingleProduct prod={prod} key={prod.id} />
+        {products.map((product) => (
+          <SingleProduct product={product} key={product.id} />
         ))}
       </div>
     </div>
